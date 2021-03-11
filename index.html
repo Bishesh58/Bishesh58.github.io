@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Task 1 start-->
+    <div>
+      <div class="profile" >
+        <div class="profile__pic" >
+          <img src="assets/bishesh.png" alt="photo">
+        </div>
+        <h2>Bishesh Sunam</h2>
+        <h3>Class 1834</h3>
+      </div>
+      <!-- <a href="#task2">Task 2</a> -->
+      <h2>My 2021 First Semester papers</h2>
+      <table>
+        <tr>
+          <th>Course Name</th>
+          <th>Code</th>
+          <th>Day</th>
+          <th>Class Room</th>
+          <th>Time</th>
+        </tr>
+        <tr>
+          <td>Programming Fundamentals</td>
+          <td>5420</td>
+          <td>Monday</td>
+          <td>
+            170-1064
+            <hr />
+            182-1004
+          </td>
+          <td>
+            1pm to 2pm
+            <hr />
+            2:30pm to 5:30pm
+          </td>
+        </tr>
+        <tr>
+          <td>Internet & Website Development</td>
+          <td>6420</td>
+          <td>Tuesday</td>
+          <td>183-2104</td>
+          <td>8:30am to 11:30am</td>
+        </tr>
+        <tr>
+          <td>Introduction to database</td>
+          <td>5423</td>
+          <td>Thursday</td>
+          <td>
+            115-1008
+            <hr />
+            183-1004
+          </td>
+          <td>
+            1pm to 3pm
+            <hr />
+            3:30pm to 5:30pm
+          </td>
+        </tr>
+        <tr>
+          <td>Internet & Website Development</td>
+          <td>6414</td>
+          <td>Friday</td>
+          <td>183-1003</td>
+          <td>12:00pm to 3pm</td>
+        </tr>
+      </table>
+
+      <h2>My best friends</h2>
+      <ul>
+        <li>John Smith</li>
+        <li>Harry Willams</li>
+        <li>Jesse schollitt</li>
+      </ul>
+    </div>
+    <!-- Task 1 end-->
+    <!-- Task 2 start-->
+    <div id="task2">
+      <h1>Calculation</h1>
+      <select id="select">
+        <option value="plus">Plus</option>
+        <option value="minus">Minus</option>
+      </select>
+      <input id="inputText" type="number" autofocus placeholder="enter number here"/>
+      <button onclick="showResult()">Total</button>
+      <button onclick="clearField()">Clear</button>
+      <p id="output"></p>
+    </div>
+ <!-- Task 2 end-->
+    <script src="script.js"></script>
+  </body>
+</html>
