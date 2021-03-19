@@ -104,6 +104,9 @@ a:visited {
   object-fit: contain;
 }
 .profile__socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .footer {
   color: rgb(167, 163, 163);
@@ -237,6 +240,7 @@ hr {
 }
 
 .contact {
+  min-width: 58%;
   margin: 16px;
   padding: 32px 16px;
   height: 30vh;

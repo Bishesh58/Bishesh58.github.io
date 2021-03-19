@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.banner {
+  position: absolute;
+  height: 100px;
+  width: 60%;
+  max-width: 800px;
+  min-width: 500px;
+  margin: 8px auto;
+  padding: 5px;
+  z-index: 999;
+  border-radius: 5px;
+  animation-name: myAnimation;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  background-color: cornflowerblue;
+}
+@keyframes myAnimation {
+  0% {
+    top: -100px;
+    left: -10px;
+  }
+  50% {
+    top: 20px;
+    left: 100px;
+  }
+  100% {
+    top: 0px;
+    left: 200px;
+  }
+}
+
+.banner__top {
+  position: relative;
+  width: 100%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.banner__top > button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 50%;
+  outline: none;
+  background-color: cornflowerblue;
+}
+
+.banner__top > button:hover {
+  transform: scale(1.2);
+  color: black;
+  border: 1px solid black;
+}
+
+.banner__top > img {
+  height: 100px;
+  width: 50%;
+  object-fit: contain;
+}
+
+.banner__topRight > p {
+width: 300px;
+  position: absolute;
+  animation-name: textAnimation;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes textAnimation {
+  0% {
+    top: -200px;
+    right: 50px;
+  }
+  50% {
+    top: 20%;
+    right: 100px;
+  }
+  100% {
+    top: 0;
+    left: 50%;
+    right: 200px;
+  }
+}
+
+.banner__topLeft{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.banner__topLeft > img {
+  width: 50%;
+  margin-left: auto;
+  height: 100px;
+  object-fit: contain;
+}
