@@ -11,3 +11,7 @@ const changeText = () => {
   let banner = document.querySelector(".banner")
    banner.classList.add("change__background");
 };
+
+const linkToPiha =()=>{
+  window.open('http://www.piha.co.nz/');
+}

@@ -217,6 +217,8 @@ a:visited {
 }
 
 .about {
+  width: 100%;
+  max-width: 650px;
   padding: 16px 32px;
   display: flex;
   justify-content: center;
