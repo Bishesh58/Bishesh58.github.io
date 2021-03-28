@@ -3,7 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  background-color: palegreen;
+  background-color: rgb(205, 215, 241);
 }
 
 .banner {
@@ -340,14 +340,19 @@ a {
   width: 100%;
 }
 .booking__form {
-  margin: 8px;
+  margin: 0 auto 0 8px;
   padding: 8px;
-  width: 60%;
+  width: 65%;
+  min-width: 380px;
   height: 500px;
-  background-color: peachpuff;
+  background-color: whitesmoke;
+  border-radius: 8px;
 }
 
 .footer {
-  height: 100px;
-  background-color: plum;
+  text-align: center;
+  margin: 3px;
+  height: 50px;
+  background-color: black;
+  color: whitesmoke;
 }
