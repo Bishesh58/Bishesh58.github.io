@@ -44,19 +44,17 @@ const changeImg = () => {
     } else if (i == 2) {
       text.innerHTML = "Explore the nature!";
     } else if (i == 3) {
-      text.classList.toggle("top")
+      text.classList.toggle("top");
       text.classList.add("bottom");
       text.innerHTML = "Feel the waves!";
-     
     } else if (i == 4) {
       text.classList.add("bottom");
       text.innerHTML = "Visit Piha today!";
-    }
-    else if (i == 5){
+    } else if (i == 5) {
       text.innerHTML = "Visit Piha today!";
       text.classList.toggle("top");
-      stdId.innerHTML = "Bishesh Sunam- 1537070"
-      stdId.classList.add("banner__sideText")
+      stdId.innerHTML = "Bishesh Sunam- 1537070";
+      stdId.classList.add("banner__sideText");
       stdId.classList.add("typewriter");
       btnFindOut.classList.add("btn__findoutVisible");
     }
@@ -71,9 +69,28 @@ const changeImg = () => {
     return;
   }
   setTimeout("changeImg()", time);
-  
 };
 
 let intervalId = setInterval(() => {
   fadeContainer.classList.toggle("fade");
 }, 1000);
+
+// Task 3: --> (Booking System)
+const tabs = document.querySelectorAll("[data-tab-target]");
+const tabContents = document.querySelectorAll("[data-tab-content]");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = document.querySelector(tab.dataset.tabTarget);
+    //remove active class
+    tabContents.forEach((tabContent) => {
+      tabContent.classList.remove("active");
+    });
+    //remove active class
+    tabs.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+    tab.classList.add("active");
+    target.classList.add("active");
+  });
+});

@@ -43,27 +43,45 @@
       <div id="titleText" class="banner__sideText top"></div>
       <div id="std__Id"></div>
       <div class="image__container">
-        <div id ="fade" class="fade">
-        </div>
-        <img id ="img" class="banner__sideImg" name="slide" width="100%" height="100%" />
+        <div id="fade" class="fade"></div>
+        <img
+          id="img"
+          class="banner__sideImg"
+          name="slide"
+          width="100%"
+          height="100%"
+        />
       </div>
-      
     </div>
     <!-- booking form - (task-3) -->
     <div class="booking__form">
-      <div class="tabs">here goes tabs</div>
-      <div class="progress__bar">Progress bar here</div>
-      <div class="info__form">
-        some inputs
+      <ul class="tabs">
+        <li data-tab-target="#page__1" class="active tab">Page 1</li>
+        <li data-tab-target="#page__2" class="tab">Page 2</li>
+        <li data-tab-target="#page__3" class="tab">Page 3</li>
+        <li data-tab-target="#page__4" class="tab">Page 4</li>
+      </ul>
+      <div class="tab__content">
+        <div id="page__1" data-tab-content class="active">
+          name: <input type="text">
+        </div>
+        <div id="page__2" data-tab-content>
+          
+        </div>
+        <div id="page__3" data-tab-content>
+          
+        </div>
+        <div id="page__4" data-tab-content>
+          
+        </div>
       </div>
-      <button>next</button>
     </div>
     <!-- footer -->
     <div class="footer">
       <!-- <a href="../html/pdf1.html">Click here for storyboard pdf</a> -->
       <p>All rights preserved &copy bishesh.sunam@gmail.com</p>
     </div>
-   
+
     <script src="../js/main.js"></script>
   </body>
 </html>

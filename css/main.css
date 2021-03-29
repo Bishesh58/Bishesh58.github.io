@@ -162,6 +162,7 @@ a {
   cursor: pointer;
 }
 
+/* Task-2 */
 .banner__side {
   position: absolute;
   padding: 8px;
@@ -308,28 +309,34 @@ a {
 
 .typewriter {
   overflow: hidden;
-  border-right: .15em solid greenyellow;
+  border-right: 0.15em solid greenyellow;
   white-space: nowrap; /* Keeping on single line */
   margin: 0 auto;
-  animation: 
-    typing 2s steps(40, end),
-    blink-caret .75s step-end forwards;
-
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end forwards;
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100%;}
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent ; }
-  50% { border-color: orange; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }
 
-#std__Id{
+#std__Id {
   bottom: 20% !important;
   left: 10%;
   font-size: 1em;
@@ -339,6 +346,7 @@ a {
   height: 115px;
   width: 100%;
 }
+/* task-3 */
 .booking__form {
   margin: 0 auto 0 8px;
   padding: 8px;
@@ -347,6 +355,40 @@ a {
   height: 500px;
   background-color: whitesmoke;
   border-radius: 8px;
+}
+
+[data-tab-content] {
+  display: none;
+}
+.active[data-tab-content] {
+  display: block;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  border-bottom: 1px solid gray;
+  margin-top: 0;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 8px;
+}
+
+.tab:hover {
+  background-color: rgb(205, 215, 241);
+}
+
+.tab.active{
+  background-color: rgb(205, 215, 241);
+}
+
+.tab__content {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .footer {
