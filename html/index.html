@@ -30,7 +30,7 @@
     </div>
 
     <!-- header  -->
-    <div class="navbar"></div>
+    <div class="header"></div>
 
     <!-- Side banner - (Task 2) -->
     <div class="banner__side">
@@ -56,31 +56,116 @@
     <!-- booking form - (task-3) -->
     <div class="booking__form">
       <ul class="tabs">
-        <li data-tab-target="#page__1" class="active tab">Page 1</li>
-        <li data-tab-target="#page__2" class="tab">Page 2</li>
-        <li data-tab-target="#page__3" class="tab">Page 3</li>
-        <li data-tab-target="#page__4" class="tab">Page 4</li>
+        <li data-tab-target="#page__1" class="active tab">Personal details</li>
+        <li data-tab-target="#page__2" class="tab">Trip details</li>
+        <li data-tab-target="#page__3" class="tab">Payment details</li>
+        <li data-tab-target="#page__4" class="tab">Summary</li>
       </ul>
       <div class="tab__content">
-        <div id="page__1" data-tab-content class="active">
-          name: <input type="text">
-        </div>
-        <div id="page__2" data-tab-content>
-          
-        </div>
-        <div id="page__3" data-tab-content>
-          
-        </div>
-        <div id="page__4" data-tab-content>
-          
-        </div>
+        <form>
+          <div id="page__1" data-tab-content class="active">
+            <div class="form__inputs">
+              <div>Personal details:</div>
+              <label for="fname">First Name</label>
+              <input id="fname" name="fname" type="text" />
+              <label for="lname">Last Name</label>
+              <input id="lname" name="lname" type="text" />
+              <label for="email">Email</label>
+              <input type="email" />
+              <label for="phone">Phone</label>
+              <input type="tel" />
+              <label for="dob">Date of Birth</label>
+              <input id="dob" min="1900-12-12" max="2020-12-31" type="date" />
+              <label>Gender:</label>
+              <div class="input__group">
+                <label for="male">Male</label>
+                <input name="gender" type="radio" />
+                <label for="female">Female</label>
+                <input name="gender" type="radio" />
+                <label for="other">Other</label>
+                <input name="gender" type="radio" />
+              </div>
+              <label for="address">Street Address</label>
+              <input id="address" type="text" />
+              <div class="input__group">
+                <label for="city">City</label>
+                <input id="city" type="text" />
+                <label for="zip">Zip</label>
+                <input min="0" id="zip" type="number" />
+              </div>
+            </div>
+          </div>
+          <div id="page__2" data-tab-content>
+            <div class="form__inputs">
+              <div>Trip details:</div>
+              <label for="indate">Check in Date</label>
+              <input id="indate" name="indate" type="date" />
+              <label for="outdate">Check out Date</label>
+              <input id="edate" name="edate" type="date" />
+              <label for="adults">Adults</label>
+              <input id="adults" name="adults" min="1" type="number" />
+              <label for="child">Childs</label>
+              <input id="child" name="child" min="0" type="number" />
+              <label for="rtype">Room Type</label>
+              <select name="rtype" id="rtype">
+                <option value="Single">Single</option>
+                <option value="Double">Double</option>
+                <option value="Five">Five</option>
+                <option value="More than five">Move than five</option>
+              </select>
+              <div class="input__group">
+                <label for="cooking">Need cooking Facilities? </label>
+                <input id="cooking" name="cooking" type="checkbox" />
+              </div>
+              <div class="input__group">
+                <label for="swimming">Need swimming equipments? </label>
+                <input id="swimming" name="swimming" type="checkbox" />
+              </div>
+              <div class="input__group">
+                <label for="color"
+                  >Chose your favourite color, for room decoration</label
+                >
+                <input id="color" name="color" value="#1abc9c" type="color" />
+              </div>
+            </div>
+          </div>
+          <div id="page__3" data-tab-content>
+            <div class="form__inputs">
+              <div>Payment details:</div>
+              <label>Choose your identification Id</label>
+              <div class="input__group">
+                <label for="license">Driving licese</label>
+                <input id="license" name="id" type="radio" />
+                <label for="passport">Passport</label>
+                <input id="passport" name="id" type="radio" />
+                <label for="other">Other</label>
+                <input id="other" name="id" type="radio" />
+              </div>
+              <label for="cname">Cardholder name</label>
+              <input type="text" name="cname" id="cname" />
+              <label for="cnumber">Card number</label>
+              <input type="text" name="cnumber" id="cnumber" />
+              <label for="expiry">Expiry</label>
+              <input type="text" name="expiry" id="expiry" />
+              <label for="cvv">CVV</label>
+              <input type="text" name="cname" id="cname" />
+            </div>
+          </div>
+          <div id="page__4" data-tab-content>
+            <div class="form__inputs">
+              <div>Summary:</div>
+              <br />
+            </div>
+          </div>
+          <div class="progress__bar"></div>
+        </form>
       </div>
     </div>
     <!-- footer -->
-    <div class="footer">
-      <!-- <a href="../html/pdf1.html">Click here for storyboard pdf</a> -->
+    <!-- <div class="footer">
+     <a href="../html/pdf1.html">Click here for storyboard pdf</a> 
       <p>All rights preserved &copy bishesh.sunam@gmail.com</p>
-    </div>
+    </div> -->
 
     <script src="../js/main.js"></script>
   </body>
