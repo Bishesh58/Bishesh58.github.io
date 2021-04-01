@@ -3,6 +3,7 @@
 window.addEventListener("load", (e) => {
   setTimeout(changeText, 7000);
   changeImg();
+  showSummary();
 });
 
 const changeText = () => {
@@ -94,3 +95,21 @@ tabs.forEach((tab) => {
     target.classList.add("active");
   });
 });
+
+//get the form
+const myForm = document.querySelector("form");
+/* formdata = new FormData will create an object,
+Object.entries() will return an array with [key value] (not necessay sorted)
+Object.formEntries transforms list of key value pairs into an object
+*/
+const data = Object.fromEntries(new FormData(myForm).entries());
+
+let btnSubmit = document.getElementById("submit");
+const showSummary = () => {
+  btnSubmit.addEventListener("click", (e) => {
+    e.preventDefault();
+    for (const [key, value] of Object.entries(data)) {
+      console.log(`${key}: ${value}`);
+    }
+  });
+};

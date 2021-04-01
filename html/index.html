@@ -18,20 +18,15 @@
     <!-- Top banner (task -1)-->
     <div class="banner" onclick="linkToPiha()" style="cursor: pointer">
       <div class="banner__top">
-        <img src="../img/task-1/swimming.png" alt="" />
+        <img src="../img/task-1/img3.jpeg" alt="" />
         <div class="banner__topText">
           <p id="text">Happiness is a day at <strong>Piha!</strong></p>
         </div>
-        <div class="banner__topCircle-img">
-          <img src="/img/task-1/beach.png" alt="" />
-        </div>
+        <img id="imgRight" src="/img/task-1/img4.jpeg" alt="" />
         <button class="close__btn">x</button>
       </div>
     </div>
-
-    <!-- header  -->
     <div class="header"></div>
-
     <!-- Side banner - (Task 2) -->
     <div class="banner__side">
       <p>Advertisement</p>
@@ -62,36 +57,46 @@
         <li data-tab-target="#page__4" class="tab">Summary</li>
       </ul>
       <div class="tab__content">
-        <form>
+        <form id="my__form">
           <div id="page__1" data-tab-content class="active">
             <div class="form__inputs">
               <div>Personal details:</div>
               <label for="fname">First Name</label>
-              <input id="fname" name="fname" type="text" />
+              <input id="fname" name="First name" type="text" />
               <label for="lname">Last Name</label>
-              <input id="lname" name="lname" type="text" />
+              <input id="lname" name="Last name" type="text" />
               <label for="email">Email</label>
-              <input type="email" />
+              <input type="email" name="Email" />
               <label for="phone">Phone</label>
-              <input type="tel" />
+              <input type="tel" name="Phone number" />
               <label for="dob">Date of Birth</label>
-              <input id="dob" min="1900-12-12" max="2020-12-31" type="date" />
+              <input
+                id="dob"
+                min="1900-12-12"
+                max="2020-12-31"
+                type="date"
+                name="Date of birth"
+              />
               <label>Gender:</label>
               <div class="input__group">
                 <label for="male">Male</label>
-                <input name="gender" type="radio" />
+                <input name="Gender" type="radio" />
                 <label for="female">Female</label>
-                <input name="gender" type="radio" />
+                <input name="Gender" type="radio" />
                 <label for="other">Other</label>
-                <input name="gender" type="radio" />
+                <input name="Gender" type="radio" />
               </div>
               <label for="address">Street Address</label>
-              <input id="address" type="text" />
+              <input id="address" type="text" name="Street address" />
               <div class="input__group">
-                <label for="city">City</label>
-                <input id="city" type="text" />
-                <label for="zip">Zip</label>
-                <input min="0" id="zip" type="number" />
+                <div>
+                  <label for="city">City</label>
+                  <input id="city" type="text" name="City" />
+                </div>
+                <div >
+                  <label for="zip" >Zip</label>
+                  <input min="0" id="zip" type="number" name="Zip" style="width: 60px;"/>
+                </div>
               </div>
             </div>
           </div>
@@ -99,15 +104,15 @@
             <div class="form__inputs">
               <div>Trip details:</div>
               <label for="indate">Check in Date</label>
-              <input id="indate" name="indate" type="date" />
+              <input id="indate" name="Check in date" type="date" />
               <label for="outdate">Check out Date</label>
-              <input id="edate" name="edate" type="date" />
+              <input id="edate" name="Check out date" type="date" />
               <label for="adults">Adults</label>
-              <input id="adults" name="adults" min="1" type="number" />
+              <input id="adults" name="Adults" min="1" type="number" />
               <label for="child">Childs</label>
-              <input id="child" name="child" min="0" type="number" />
+              <input id="child" name="Child" min="0" type="number" />
               <label for="rtype">Room Type</label>
-              <select name="rtype" id="rtype">
+              <select name="Room type" id="rtype">
                 <option value="Single">Single</option>
                 <option value="Double">Double</option>
                 <option value="Five">Five</option>
@@ -115,17 +120,26 @@
               </select>
               <div class="input__group">
                 <label for="cooking">Need cooking Facilities? </label>
-                <input id="cooking" name="cooking" type="checkbox" />
+                <input id="cooking" name="Cooking facilities" type="checkbox" />
               </div>
               <div class="input__group">
                 <label for="swimming">Need swimming equipments? </label>
-                <input id="swimming" name="swimming" type="checkbox" />
+                <input
+                  id="swimming"
+                  name="Swimming equipment"
+                  type="checkbox"
+                />
               </div>
               <div class="input__group">
                 <label for="color"
                   >Chose your favourite color, for room decoration</label
                 >
-                <input id="color" name="color" value="#1abc9c" type="color" />
+                <input
+                  id="color"
+                  name="Favourite color"
+                  value="#1abc9c"
+                  type="color"
+                />
               </div>
             </div>
           </div>
@@ -142,19 +156,27 @@
                 <input id="other" name="id" type="radio" />
               </div>
               <label for="cname">Cardholder name</label>
-              <input type="text" name="cname" id="cname" />
+              <input type="text" name="Cardholder name" id="cname" />
               <label for="cnumber">Card number</label>
-              <input type="text" name="cnumber" id="cnumber" />
+              <input type="text" name="Card number" id="cnumber" />
               <label for="expiry">Expiry</label>
-              <input type="text" name="expiry" id="expiry" />
+              <input type="text" name="Expiry" id="expiry" />
               <label for="cvv">CVV</label>
-              <input type="text" name="cname" id="cname" />
+              <input
+                type="number"
+                name="cvv"
+                id="cvv"
+                pattern="\d{3}"
+                value="123"
+              />
             </div>
           </div>
           <div id="page__4" data-tab-content>
             <div class="form__inputs">
+              <button type="submit" id="submit">Submit</button>
               <div>Summary:</div>
               <br />
+              <p id="summary__data"></p>
             </div>
           </div>
           <div class="progress__bar"></div>
