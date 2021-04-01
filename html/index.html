@@ -93,11 +93,22 @@
                   <label for="city">City</label>
                   <input id="city" type="text" name="City" />
                 </div>
-                <div >
-                  <label for="zip" >Zip</label>
-                  <input min="0" id="zip" type="number" name="Zip" style="width: 60px;"/>
+                <div>
+                  <label for="zip">Zip</label>
+                  <input
+                    min="0"
+                    id="zip"
+                    type="number"
+                    name="Zip"
+                    style="width: 60px"
+                  />
                 </div>
               </div>
+            </div>
+
+            <!-- page btns -->
+            <div class="prevNext">
+              <a onclick="nxtPage()">next &raquo;</a>
             </div>
           </div>
           <div id="page__2" data-tab-content>
@@ -142,6 +153,12 @@
                 />
               </div>
             </div>
+
+            <!-- page btns -->
+            <div class="prevNext">
+              <a onclick="prevPage()"> &laquo; prev</a>
+              <a onclick="nxtPage()">next &raquo;</a>
+            </div>
           </div>
           <div id="page__3" data-tab-content>
             <div class="form__inputs">
@@ -158,17 +175,33 @@
               <label for="cname">Cardholder name</label>
               <input type="text" name="Cardholder name" id="cname" />
               <label for="cnumber">Card number</label>
-              <input type="text" name="Card number" id="cnumber" />
+              <input
+                placeholder="0000 0000 0000 0000"
+                type="tel"
+                name="Card number"
+                id="cnumber"
+                maxlength="16"
+              />
               <label for="expiry">Expiry</label>
               <input type="text" name="Expiry" id="expiry" />
               <label for="cvv">CVV</label>
               <input
-                type="number"
+                type="tel"
                 name="cvv"
                 id="cvv"
                 pattern="\d{3}"
-                value="123"
+                value="000"
+                maxlength="3"
               />
+              <div class="input__group">
+                <label for="t&c">I agree with all terms & conditions</label>
+                <input type="checkbox" />
+              </div>
+            </div>
+            <!-- page btns -->
+            <div class="prevNext">
+              <a onclick="prevPage()"> &laquo; prev</a>
+              <a onclick="nxtPage()">next &raquo;</a>
             </div>
           </div>
           <div id="page__4" data-tab-content>
@@ -177,6 +210,10 @@
               <div>Summary:</div>
               <br />
               <p id="summary__data"></p>
+            </div>
+            <!-- page btns -->
+            <div class="prevNext">
+              <a onclick="prevPage()"> &laquo; prev</a>
             </div>
           </div>
           <div class="progress__bar"></div>

@@ -1,4 +1,4 @@
-//Task: 1-->
+//Task: 1----->
 
 window.addEventListener("load", (e) => {
   setTimeout(changeText, 7000);
@@ -19,8 +19,8 @@ const linkToPiha = () => {
   window.open("http://www.piha.co.nz/");
 };
 
-// Task 2:-->
 
+// Task 2:------->
 let images = [];
 let i = 0;
 let time = 2000;
@@ -76,26 +76,75 @@ let intervalId = setInterval(() => {
   fadeContainer.classList.toggle("fade");
 }, 1000);
 
-// Task 3: --> (Booking System)
+// Task 3: ---------> 
 const tabs = document.querySelectorAll("[data-tab-target]");
 const tabContents = document.querySelectorAll("[data-tab-content]");
+
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     const target = document.querySelector(tab.dataset.tabTarget);
     //remove active class
-    tabContents.forEach((tabContent) => {
-      tabContent.classList.remove("active");
-    });
-    //remove active class
-    tabs.forEach((tab) => {
-      tab.classList.remove("active");
-    });
+    removeActiveClass();
+    //add active to only target whichever clicked
     tab.classList.add("active");
     target.classList.add("active");
   });
 });
 
+
+let page1 = document.getElementById("page__1");
+let page2 = document.getElementById("page__2");
+let page3 = document.getElementById("page__3");
+let page4 = document.getElementById("page__4");
+
+//next page
+const nxtPage = () => {
+  if(page1.classList.contains("active")){
+    removeActiveClass();
+    tabs[1].classList.add("active");
+    tabContents[1].classList.add("active");
+  }
+  else if(page2.classList.contains("active")){
+    removeActiveClass();
+    tabs[2].classList.add("active");
+    tabContents[2].classList.add("active");
+  }
+  else if (page3.classList.contains("active")){
+    removeActiveClass();
+    tabs[3].classList.add("active");
+    tabContents[3].classList.add("active");
+  }
+};
+
+//prev page
+const prevPage = ()=>{
+  if(page2.classList.contains("active")){
+    removeActiveClass();
+    tabs[0].classList.add("active");
+    tabContents[0].classList.add("active");
+  }
+  else if(page3.classList.contains("active")){
+    removeActiveClass();
+    tabs[1].classList.add("active");
+    tabContents[1].classList.add("active");
+  }
+  else if (page4.classList.contains("active")){
+    removeActiveClass();
+    tabs[2].classList.add("active");
+    tabContents[2].classList.add("active");
+  }
+}
+
+//helper function for removing the active class
+const removeActiveClass =()=>{
+  tabs.forEach((tab) => {
+    tab.classList.remove("active");
+  });
+  tabContents.forEach((tabContent) => {
+    tabContent.classList.remove("active");
+  });
+}
 //get the form
 const myForm = document.querySelector("form");
 /* formdata = new FormData will create an object,

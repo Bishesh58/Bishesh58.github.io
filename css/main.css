@@ -15,7 +15,7 @@ body {
   width: 100px;
   max-width: 500px;
   min-width: 500px;
-  z-index: 999;
+  z-index: 9;
   border: 1px solid black;
   animation-name: myAnimation;
   animation-duration: 5s;
@@ -99,9 +99,14 @@ body {
   transform: scale(1.2);
 }
 
-.banner__topText > p {
-  min-width: 100px;
+.banner__topText{
   position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.banner__topText > p {
   animation-name: textAnimation;
   animation-duration: 3s;
   animation-timing-function: linear;
@@ -122,12 +127,13 @@ body {
     left: 50%;
     right: 200px;
     letter-spacing: 2px;
-    color: black;
+    color: white;
   }
 }
 
 .change__text {
-  transform: scale(0.9);
+  transform: scale(1.1);
+  z-index: 11;
 }
 .change__background {
   background-color: teal;
@@ -358,7 +364,7 @@ a {
   margin: 3px auto 0 8px;
   padding:  0 8px 8px 8px;
   width: 65%;
-  height: 100vh;
+  height: 90vh;
   max-width: 750px;
   min-width: 380px;
   max-height: 600px;
@@ -420,13 +426,21 @@ form {
   border-radius: 8px;
   /* background-color: rgb(235, 237, 241); */
 }
+
+#page__1,
+#page__2,
+#page__3 {
+  height: 100%;
+}
+
+
 .form__inputs {
+  height: 100%;
   padding: 10px;
   padding-top: 0;
   width: auto;
   display: flex;
   flex-direction: column;
-
 }
 input[type="radio"]{
   vertical-align: sub;
@@ -476,8 +490,21 @@ input[type="color"]{
   border-radius: 5px;
 }
 
+.prevNext {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-
+.prevNext a {
+  padding: 5px;
+  border: none;
+  outline: none;
+  background-color: #7a7b96;
+  border-radius: 5px;
+  color: white;
+}
 
 /* .footer {
   font-family: Georgia, 'Times New Roman', Times, serif;
