@@ -80,11 +80,11 @@
               <label>Gender:</label>
               <div class="input__group">
                 <label for="male">Male</label>
-                <input name="Gender" type="radio" />
+                <input name="Gender" type="radio" value="male"/>
                 <label for="female">Female</label>
-                <input name="Gender" type="radio" />
+                <input name="Gender" type="radio" value="female"/>
                 <label for="other">Other</label>
-                <input name="Gender" type="radio" />
+                <input name="Gender" type="radio" value="other"/>
               </div>
               <label for="address">Street Address</label>
               <input id="address" type="text" name="Street address" />
@@ -166,11 +166,11 @@
               <label>Choose your identification Id</label>
               <div class="input__group">
                 <label for="license">Driving licese</label>
-                <input id="license" name="id" type="radio" />
+                <input id="license" name="id" type="radio" value="license"/>
                 <label for="passport">Passport</label>
-                <input id="passport" name="id" type="radio" />
+                <input id="passport" name="id" type="radio" value="passport"/>
                 <label for="other">Other</label>
-                <input id="other" name="id" type="radio" />
+                <input id="other" name="id" type="radio" value="other"/>
               </div>
               <label for="cname">Cardholder name</label>
               <input type="text" name="Cardholder name" id="cname" />
@@ -197,23 +197,29 @@
                 <label for="t&c">I agree with all terms & conditions</label>
                 <input type="checkbox" />
               </div>
+              <div>
+                <span>Click twice if you want to submit</span>
+                <button type="submit" id="submit">Submit</button>
+              </div>
             </div>
+           
             <!-- page btns -->
             <div class="prevNext">
               <a onclick="prevPage()"> &laquo; prev</a>
               <a onclick="nxtPage()">next &raquo;</a>
             </div>
+           
           </div>
           <div id="page__4" data-tab-content>
             <div class="form__inputs">
-              <button type="submit" id="submit">Submit</button>
               <div>Summary:</div>
               <br />
-              <p id="summary__data"></p>
+              <div id="summary__container"></div>
             </div>
             <!-- page btns -->
             <div class="prevNext">
               <a onclick="prevPage()"> &laquo; prev</a>
+              <button id="btnreset"> reset</button>
             </div>
           </div>
           <div class="progress__bar"></div>

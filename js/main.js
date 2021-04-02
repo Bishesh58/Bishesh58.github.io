@@ -3,7 +3,6 @@
 window.addEventListener("load", (e) => {
   setTimeout(changeText, 7000);
   changeImg();
-  showSummary();
 });
 
 const changeText = () => {
@@ -18,7 +17,6 @@ const changeText = () => {
 const linkToPiha = () => {
   window.open("http://www.piha.co.nz/");
 };
-
 
 // Task 2:------->
 let images = [];
@@ -76,10 +74,9 @@ let intervalId = setInterval(() => {
   fadeContainer.classList.toggle("fade");
 }, 1000);
 
-// Task 3: ---------> 
+// Task 3: --------->
 const tabs = document.querySelectorAll("[data-tab-target]");
 const tabContents = document.querySelectorAll("[data-tab-content]");
-
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -92,7 +89,6 @@ tabs.forEach((tab) => {
   });
 });
 
-
 let page1 = document.getElementById("page__1");
 let page2 = document.getElementById("page__2");
 let page3 = document.getElementById("page__3");
@@ -100,17 +96,15 @@ let page4 = document.getElementById("page__4");
 
 //next page
 const nxtPage = () => {
-  if(page1.classList.contains("active")){
+  if (page1.classList.contains("active")) {
     removeActiveClass();
     tabs[1].classList.add("active");
     tabContents[1].classList.add("active");
-  }
-  else if(page2.classList.contains("active")){
+  } else if (page2.classList.contains("active")) {
     removeActiveClass();
     tabs[2].classList.add("active");
     tabContents[2].classList.add("active");
-  }
-  else if (page3.classList.contains("active")){
+  } else if (page3.classList.contains("active")) {
     removeActiveClass();
     tabs[3].classList.add("active");
     tabContents[3].classList.add("active");
@@ -118,47 +112,65 @@ const nxtPage = () => {
 };
 
 //prev page
-const prevPage = ()=>{
-  if(page2.classList.contains("active")){
+const prevPage = () => {
+  if (page2.classList.contains("active")) {
     removeActiveClass();
     tabs[0].classList.add("active");
     tabContents[0].classList.add("active");
-  }
-  else if(page3.classList.contains("active")){
+  } else if (page3.classList.contains("active")) {
     removeActiveClass();
     tabs[1].classList.add("active");
     tabContents[1].classList.add("active");
-  }
-  else if (page4.classList.contains("active")){
+  } else if (page4.classList.contains("active")) {
     removeActiveClass();
     tabs[2].classList.add("active");
     tabContents[2].classList.add("active");
   }
-}
+};
 
 //helper function for removing the active class
-const removeActiveClass =()=>{
+const removeActiveClass = () => {
   tabs.forEach((tab) => {
     tab.classList.remove("active");
   });
   tabContents.forEach((tabContent) => {
     tabContent.classList.remove("active");
   });
-}
-//get the form
-const myForm = document.querySelector("form");
-/* formdata = new FormData will create an object,
-Object.entries() will return an array with [key value] (not necessay sorted)
-Object.formEntries transforms list of key value pairs into an object
-*/
-const data = Object.fromEntries(new FormData(myForm).entries());
+};
 
+//showing summary of all data
+const myForm = document.querySelector("form");
 let btnSubmit = document.getElementById("submit");
-const showSummary = () => {
-  btnSubmit.addEventListener("click", (e) => {
-    e.preventDefault();
-    for (const [key, value] of Object.entries(data)) {
-      console.log(`${key}: ${value}`);
+let parentDiv = document.getElementById("summary__container");
+let childDiv = document.createElement("div");
+childDiv.setAttribute("id", "childDiv");
+//by default form will submit if button click so preventing from page refresh
+myForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let data = new FormData(myForm);
+  showSummary(data);
+});
+
+const showSummary = (data) => {
+  btnSubmit.addEventListener("click", () => {
+    for (let [key, value] of data) {
+      el = document.createElement("div");
+      el.setAttribute("id", "singleDiv");
+      el.innerHTML += `${key} : ${value}`;
+      childDiv.appendChild(el);
+      parentDiv.appendChild(childDiv);
     }
+    nxtPage();
   });
 };
+
+//reset fields & summary
+btnReset = document.getElementById("btnreset");
+btnReset.addEventListener("click", (e) => {
+  e.preventDefault();
+  myForm.reset();
+  removeActiveClass();
+  childDiv.remove();
+  tabs[0].classList.add("active");
+  tabContents[0].classList.add("active");
+});

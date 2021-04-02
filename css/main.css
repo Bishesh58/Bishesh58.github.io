@@ -429,10 +429,10 @@ form {
 
 #page__1,
 #page__2,
-#page__3 {
+#page__3,
+#page__4 {
   height: 100%;
 }
-
 
 .form__inputs {
   height: 100%;
@@ -489,7 +489,10 @@ input[type="color"]{
   border: 1px solid rgb(192, 189, 189);
   border-radius: 5px;
 }
-
+#submit {
+  margin-top: 40px;
+  margin-left: 20px;
+}
 .prevNext {
   margin-bottom: 8px;
   display: flex;
