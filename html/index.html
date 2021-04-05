@@ -26,9 +26,28 @@
         <button class="close__btn">x</button>
       </div>
     </div>
-    <div class="header"></div>
+    <div class="header">
+      <div></div>
+      <ul>
+        <li>
+          <a href="../pdf/storyboardTask1.pdf" target="_blank"
+            >Storyboard for Task 1</a
+          >
+        </li>
+        <li>
+          <a href="../pdf/storyboardTask1.pdf" target="_blank"
+            >Storyboard for Task 2</a
+          >
+        </li>
+        <li>
+          <a href="../pdf/storyboardTask1.pdf" target="_blank">
+            Storyboard for task 3</a
+          >
+        </li>
+      </ul>
+    </div>
     <!-- Side banner - (Task 2) -->
-    <div class="banner__side">
+    <div id="banner__side" class="banner__side">
       <p>Advertisement</p>
       <button class="btn__findout">Find out more</button>
       <div class="btn__container">
@@ -37,6 +56,9 @@
       </div>
       <div id="titleText" class="banner__sideText top"></div>
       <div id="std__Id"></div>
+      <div class="btnReplay">
+        <button onclick="replay()">replay</button>
+      </div>
       <div class="image__container">
         <div id="fade" class="fade"></div>
         <img
@@ -66,28 +88,29 @@
               <label for="lname">Last Name</label>
               <input id="lname" name="Last name" type="text" />
               <label for="email">Email</label>
-              <input type="email" name="Email" />
+              <input id="email" type="email" name="Email" required/>
               <label for="phone">Phone</label>
-              <input type="tel" name="Phone number" />
+              <input id="phone" type="tel" name="Phone number" />
               <label for="dob">Date of Birth</label>
               <input
+                type="date"
                 id="dob"
                 min="1900-12-12"
-                max="2020-12-31"
+                max="2021-12-31"
                 type="date"
                 name="Date of birth"
               />
               <label>Gender:</label>
               <div class="input__group">
                 <label for="male">Male</label>
-                <input name="Gender" type="radio" value="male"/>
+                <input id="male" name="gender" type="radio" value="male" />
                 <label for="female">Female</label>
-                <input name="Gender" type="radio" value="female"/>
-                <label for="other">Other</label>
-                <input name="Gender" type="radio" value="other"/>
+                <input id="female" name="gender" type="radio" value="female" />
+                <label for="other">Others</label>
+                <input id="others" name="gender" type="radio" value="other" />
               </div>
               <label for="address">Street Address</label>
-              <input id="address" type="text" name="Street address" />
+              <input id="street" type="text" name="Street address" />
               <div class="input__group">
                 <div>
                   <label for="city">City</label>
@@ -108,22 +131,23 @@
 
             <!-- page btns -->
             <div class="prevNext">
-              <a onclick="nxtPage()">next &raquo;</a>
+              <div></div>
+              <a id="next" onclick="nxtPage()">next &raquo;</a>
             </div>
           </div>
           <div id="page__2" data-tab-content>
             <div class="form__inputs">
               <div>Trip details:</div>
               <label for="indate">Check in Date</label>
-              <input id="indate" name="Check in date" type="date" />
+              <input id="checkInDate" name="Check in date" type="date" />
               <label for="outdate">Check out Date</label>
-              <input id="edate" name="Check out date" type="date" />
+              <input id="checkOutDate" name="Check out date" type="date" />
               <label for="adults">Adults</label>
               <input id="adults" name="Adults" min="1" type="number" />
               <label for="child">Childs</label>
               <input id="child" name="Child" min="0" type="number" />
               <label for="rtype">Room Type</label>
-              <select name="Room type" id="rtype">
+              <select name="Room type" id="roomType">
                 <option value="Single">Single</option>
                 <option value="Double">Double</option>
                 <option value="Five">Five</option>
@@ -131,7 +155,12 @@
               </select>
               <div class="input__group">
                 <label for="cooking">Need cooking Facilities? </label>
-                <input id="cooking" name="Cooking facilities" type="checkbox" />
+                <input
+                  id="cooking"
+                  name="Cooking facilities"
+                  type="checkbox"
+                  value="Y"
+                />
               </div>
               <div class="input__group">
                 <label for="swimming">Need swimming equipments? </label>
@@ -139,6 +168,7 @@
                   id="swimming"
                   name="Swimming equipment"
                   type="checkbox"
+                  value="Y"
                 />
               </div>
               <div class="input__group">
@@ -165,21 +195,21 @@
               <div>Payment details:</div>
               <label>Choose your identification Id</label>
               <div class="input__group">
-                <label for="license">Driving licese</label>
+                <label for="license">Driving license</label>
                 <input id="license" name="id" type="radio" value="license"/>
                 <label for="passport">Passport</label>
-                <input id="passport" name="id" type="radio" value="passport"/>
+                <input id="passport" name="id" type="radio" value="passport" />
                 <label for="other">Other</label>
-                <input id="other" name="id" type="radio" value="other"/>
+                <input id="other" name="id" type="radio" value="other" />
               </div>
               <label for="cname">Cardholder name</label>
-              <input type="text" name="Cardholder name" id="cname" />
+              <input type="text" name="Cardholder name" id="cardHolder" />
               <label for="cnumber">Card number</label>
               <input
                 placeholder="0000 0000 0000 0000"
                 type="tel"
                 name="Card number"
-                id="cnumber"
+                id="cardNumber"
                 maxlength="16"
               />
               <label for="expiry">Expiry</label>
@@ -195,20 +225,19 @@
               />
               <div class="input__group">
                 <label for="t&c">I agree with all terms & conditions</label>
-                <input type="checkbox" />
+                <input id="tc" type="checkbox" name="tc"checked="checked" value="agreed"/>
               </div>
               <div>
-                <span>Click twice if you want to submit</span>
+                <span>Are you sure you want to submit?</span>
                 <button type="submit" id="submit">Submit</button>
               </div>
             </div>
-           
+
             <!-- page btns -->
             <div class="prevNext">
               <a onclick="prevPage()"> &laquo; prev</a>
               <a onclick="nxtPage()">next &raquo;</a>
             </div>
-           
           </div>
           <div id="page__4" data-tab-content>
             <div class="form__inputs">
@@ -219,11 +248,14 @@
             <!-- page btns -->
             <div class="prevNext">
               <a onclick="prevPage()"> &laquo; prev</a>
-              <button id="btnreset"> reset</button>
+              <button id="btnreset">reset</button>
             </div>
           </div>
-          <div class="progress__bar"></div>
+         
         </form>
+      </div>
+      <div class="progress__bar">
+        <div id="progress__fill" class="progress__fill"></div>
       </div>
     </div>
     <!-- footer -->

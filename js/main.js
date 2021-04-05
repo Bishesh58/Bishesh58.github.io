@@ -3,6 +3,7 @@
 window.addEventListener("load", (e) => {
   setTimeout(changeText, 7000);
   changeImg();
+  showSummary();
 });
 
 const changeText = () => {
@@ -74,6 +75,15 @@ let intervalId = setInterval(() => {
   fadeContainer.classList.toggle("fade");
 }, 1000);
 
+const replay = () => {
+  let elem = document.getElementById("banner__side").innerHTML;
+  document.getElementById("banner__side").innerHTML = elem;
+  changeImg();
+  let intervalId = setInterval(() => {
+    fadeContainer.classList.toggle("fade");
+  }, 1000);
+};
+
 // Task 3: --------->
 const tabs = document.querySelectorAll("[data-tab-target]");
 const tabContents = document.querySelectorAll("[data-tab-content]");
@@ -96,6 +106,7 @@ let page4 = document.getElementById("page__4");
 
 //next page
 const nxtPage = () => {
+  progressBar();
   if (page1.classList.contains("active")) {
     removeActiveClass();
     tabs[1].classList.add("active");
@@ -113,6 +124,7 @@ const nxtPage = () => {
 
 //prev page
 const prevPage = () => {
+  progressBar();
   if (page2.classList.contains("active")) {
     removeActiveClass();
     tabs[0].classList.add("active");
@@ -147,13 +159,16 @@ childDiv.setAttribute("id", "childDiv");
 //by default form will submit if button click so preventing from page refresh
 myForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  let data = new FormData(myForm);
-  showSummary(data);
 });
 
-const showSummary = (data) => {
-  btnSubmit.addEventListener("click", () => {
-    for (let [key, value] of data) {
+const showSummary = () => {
+  progressBar();
+  btnSubmit.addEventListener("click", (e) => {
+    e.preventDefault();
+    let data = new FormData(myForm);
+    for (let entries of data) {
+      //console.log(entries);
+      const [key, value] = entries;
       el = document.createElement("div");
       el.setAttribute("id", "singleDiv");
       el.innerHTML += `${key} : ${value}`;
@@ -168,9 +183,148 @@ const showSummary = (data) => {
 btnReset = document.getElementById("btnreset");
 btnReset.addEventListener("click", (e) => {
   e.preventDefault();
+  progressFill.style.width = "0%";
   myForm.reset();
+  let data = new FormData(myForm);
+  for (let [key, value] of data) {
+    document.getElementById("singleDiv")?.remove();
+  }
   removeActiveClass();
   childDiv.remove();
   tabs[0].classList.add("active");
   tabContents[0].classList.add("active");
 });
+
+// progress method 1--->
+/*
+const progressBar = () => {
+  let data = new FormData(myForm);
+  for (let [key, value] of data) {
+    console.log(key, value);
+  }
+};
+*/
+
+//progress bar method 2--->
+
+let fname = document.getElementById("fname");
+let lname = document.getElementById("lname");
+let email = document.getElementById("email");
+let phone = document.getElementById("phone");
+let dob = document.getElementById("dob");
+
+let male = document.getElementById("male");
+let female = document.getElementById("female");
+let others = document.getElementById("others");
+let street = document.getElementById("street");
+let city = document.getElementById("city");
+let zip = document.getElementById("zip");
+
+let checkInDate = document.getElementById("checkInDate");
+let checkOutDate = document.getElementById("checkOutDate");
+let adults = document.getElementById("adults");
+let child = document.getElementById("child");
+let cooking = document.getElementById("cooking");
+let swimming = document.getElementById("swimming");
+let color = document.getElementById("color");
+
+let license = document.getElementById("license");
+let passport = document.getElementById("passport");
+let other = document.getElementById("other");
+let cardHolder = document.getElementById("cardHolder");
+let cardNumber = document.getElementById("cardNumber");
+let expiry = document.getElementById("expiry");
+let cvv = document.getElementById("cvv");
+let tc = document.getElementById("tc");
+
+let progressFill = document.getElementById("progress__fill");
+const progressBar = () => {
+  let i = (j = k = 0);
+
+  if (fname.value) {
+    i++;
+  }
+  if (lname.value) {
+    i++;
+  }
+  if (email.value) {
+    i++;
+  }
+  if (phone.value) {
+    i++;
+  }
+  if (dob.value) {
+    i++;
+  }
+
+  if (male.checked || female.checked || others.checked) {
+    i++;
+  }
+  if (street.value) {
+    i++;
+  }
+  if (city.value) {
+    i++;
+  }
+  if (zip.value) {
+    i++;
+  }
+
+  if (checkInDate.value) {
+    j++;
+  }
+  if (checkOutDate.value) {
+    j++;
+  }
+  if (adults.value) {
+    j++;
+  }
+  if (child.value) {
+    j++;
+  }
+
+  if (cooking.checked) {
+    j++;
+  }
+  if (swimming.checked) {
+    j++;
+  }
+  if (license.checked || passport.checked || other.checked) {
+    k++;
+  }
+  if (cardHolder.value) {
+    k++;
+  }
+  if (cardNumber.value) {
+    k++;
+  }
+  if (expiry.value) {
+    k++;
+  }
+  if (cvv.value) {
+    k++;
+  }
+  if (tc.checked) {
+    k++;
+  }
+  //either first page, second page or third page is completed
+  if (i == 9 || j == 6 || k == 6) {
+    progressFill.style.width = "33.33%";
+  }
+  //first and second page is completed
+  if (i == 9 && j == 6) {
+    progressFill.style.width = "66.99%";
+  }
+  //first and third page is completed
+  if (i == 9 && k == 6) {
+    progressFill.style.width = "66.99%";
+  }
+  //second and third page is completed
+  if (j == 6 && k == 6) {
+    progressFill.style.width = "66.99%";
+  }
+  //all three page is completed
+  if (i == 9 && j == 6 && k == 6) {
+    progressFill.style.width = "100%";
+  }
+};
