@@ -47,10 +47,9 @@ body {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  background: url("../img/task-1/img4.jpeg");
-}
-
-.banner__top > img {
+  background: url("../img/task-1/imgbck.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .close__btn {
@@ -117,7 +116,7 @@ body {
     opacity: 0;
   }
   50% {
-    opacity: 0;
+    opacity: 0.5;
     transform: scale(0.5);
     color: rgb(232, 20, 151);
   }
@@ -126,16 +125,15 @@ body {
     left: 50%;
     right: 200px;
     letter-spacing: 2px;
-    color: white;
+    color: rgb(109, 27, 27);
   }
 }
 
 .change__text {
-  transform: scale(1.1);
+  font-family: "Courgette", cursive;
+  color: black !important;
+  width: 50%;
   z-index: 11;
-}
-.change__background {
-  background-color: teal;
 }
 
 #imgRight {
@@ -386,7 +384,6 @@ a {
   cursor: pointer;
 }
 
-
 .navbar {
   height: 115px;
   width: 100%;
@@ -539,7 +536,7 @@ input[type="color"] {
   color: white;
 }
 
-#btnreset{
+#btnreset {
   padding: 5px;
   border: none;
   outline: none;
@@ -566,7 +563,7 @@ input[type="color"] {
   align-items: center;
   background-color: teal;
   border-radius: 99px;
-  transition: .5s linear;
+  transition: 0.5s linear;
 }
 
 .fill__firstPage {

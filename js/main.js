@@ -1,7 +1,6 @@
 //Task: 1----->
 
 window.addEventListener("load", (e) => {
-  setTimeout(changeText, 7000);
   changeImg();
   showSummary();
 });
@@ -10,10 +9,9 @@ const changeText = () => {
   let text = document.getElementById("text");
   text.innerHTML = "Bishesh Sunam - 1537070";
   text.classList.add("change__text");
-
   let banner = document.querySelector(".banner");
-  banner.classList.add("change__background");
 };
+setTimeout(changeText, 7000);
 
 const linkToPiha = () => {
   window.open("http://www.piha.co.nz/");
