@@ -55,6 +55,7 @@ const changeImg = () => {
       stdId.classList.add("banner__sideText");
       stdId.classList.add("typewriter");
       btnFindOut.classList.add("btn__findoutVisible");
+      document.querySelector(".btnReplay").style.display = "block";
     }
   } else {
     i = 0;

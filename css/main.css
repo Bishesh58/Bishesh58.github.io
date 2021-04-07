@@ -282,6 +282,7 @@ a {
   padding: 5px;
   width: 70px;
   height: 70px;
+  z-index: 9999;
   top: 45%;
   left: 50%;
   translate: transform(-50%, -45%);
@@ -372,6 +373,7 @@ a {
   overflow: hidden;
 }
 .btnReplay {
+  display: none;
   position: absolute;
   z-index: 999;
   bottom: 5px;
@@ -380,8 +382,13 @@ a {
   cursor: pointer;
 }
 .btnReplay > button {
-  border: none;
+  font-size: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 2px;
   cursor: pointer;
+  background: none;
+  color: white;
 }
 
 .navbar {
