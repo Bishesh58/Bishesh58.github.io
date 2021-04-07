@@ -234,6 +234,7 @@ let cardNumber = document.getElementById("cardNumber");
 let expiry = document.getElementById("expiry");
 let cvv = document.getElementById("cvv");
 let tc = document.getElementById("tc");
+let rating = document.getElementById("rating")
 
 let progressFill = document.getElementById("progress__fill");
 const progressBar = () => {
@@ -305,8 +306,11 @@ const progressBar = () => {
   if (tc.checked) {
     k++;
   }
+  if(rating.value){
+    k++;
+  }
   //either first page, second page or third page is completed
-  if (i == 9 || j == 6 || k == 6) {
+  if (i == 9 || j == 6 || k == 7) {
     progressFill.style.width = "33.33%";
   }
   //first and second page is completed
@@ -314,15 +318,15 @@ const progressBar = () => {
     progressFill.style.width = "66.99%";
   }
   //first and third page is completed
-  if (i == 9 && k == 6) {
+  if (i == 9 && k == 7) {
     progressFill.style.width = "66.99%";
   }
   //second and third page is completed
-  if (j == 6 && k == 6) {
+  if (j == 6 && k == 7) {
     progressFill.style.width = "66.99%";
   }
   //all three page is completed
-  if (i == 9 && j == 6 && k == 6) {
+  if (i == 9 && j == 6 && k == 7) {
     progressFill.style.width = "100%";
   }
 };

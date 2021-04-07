@@ -88,7 +88,7 @@
               <label for="lname">Last Name</label>
               <input id="lname" name="Last name" type="text" />
               <label for="email">Email</label>
-              <input id="email" type="email" name="Email" required/>
+              <input id="email" type="email" name="Email" required />
               <label for="phone">Phone</label>
               <input id="phone" type="tel" name="Phone number" />
               <label for="dob">Date of Birth</label>
@@ -171,6 +171,7 @@
                   value="Y"
                 />
               </div>
+
               <div class="input__group">
                 <label for="color"
                   >Chose your favourite color, for room decoration</label
@@ -182,6 +183,7 @@
                   type="color"
                 />
               </div>
+            
             </div>
 
             <!-- page btns -->
@@ -196,7 +198,7 @@
               <label>Choose your identification Id</label>
               <div class="input__group">
                 <label for="license">Driving license</label>
-                <input id="license" name="id" type="radio" value="license"/>
+                <input id="license" name="id" type="radio" value="license" />
                 <label for="passport">Passport</label>
                 <input id="passport" name="id" type="radio" value="passport" />
                 <label for="other">Other</label>
@@ -225,7 +227,23 @@
               />
               <div class="input__group">
                 <label for="t&c">I agree with all terms & conditions</label>
-                <input id="tc" type="checkbox" name="tc"checked="checked" value="agreed"/>
+                <input
+                  id="tc"
+                  type="checkbox"
+                  name="tc"
+                  checked="checked"
+                  value="agreed"
+                />
+              </div>
+              <div class="input__group">
+                <label for="rating">Rate our service (0-10)</label>
+                <input
+                  id="rating"
+                  name="Rating"
+                  min="0"
+                  max="10"
+                  type="range"
+                />
               </div>
               <div>
                 <span>Are you sure you want to submit?</span>
@@ -251,7 +269,6 @@
               <button id="btnreset">reset</button>
             </div>
           </div>
-         
         </form>
       </div>
       <div class="progress__bar">
